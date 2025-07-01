@@ -1,9 +1,10 @@
 import jsonwebtoken from 'jsonwebtoken';
-import jwt_secret from '../config/index.js';
+import { jwt_secret } from '../config/index.js';
+
 
 
 export const auth = async (req, res, next) => {
-    const token = req.headers['x-authorization'];
+    const token = req.header('X-Authorization');
 
     if (!token) {
         return next();
@@ -21,5 +22,3 @@ export const auth = async (req, res, next) => {
     }
 
 }
-
-export default auth

@@ -2,6 +2,7 @@ import express from 'express';
 import routes from './routes.js';
 import cors from 'cors';
 import mongoose from 'mongoose';
+import { auth } from './middlewares/authMiddleware.js';
 
 const app = express();
 
@@ -25,9 +26,6 @@ app.use(routes);
 
 app.use(auth);
 
-app.get('/data/catalog', (req,res) =>{
-    res.json([])
-})
 
 
 app.listen(3030, ()=>{console.log('Server is listening on port http://localhost:3030 ...')})

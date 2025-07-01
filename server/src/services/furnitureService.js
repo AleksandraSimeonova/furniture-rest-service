@@ -5,5 +5,8 @@ export default {
     create(furnitureData){
         
         return Furniture.create(furnitureData)
-    }
+    },
+     getAll() {
+        return Furniture.find();
+    },
 }   

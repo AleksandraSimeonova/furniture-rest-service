@@ -1,5 +1,11 @@
 import express from 'express';
 import routes from './routes.js';
+import mongoose from 'mongoose';
+
+
+mongoose.connect('mongodb://localhost:27017', {dbName: 'furniture-may-2025'})
+.then(()=> console.log('Successfuly connect to DB'))
+.catch((err)=> console.log('Can not connect to DB: ', err.message))
 
 
 const app = express();

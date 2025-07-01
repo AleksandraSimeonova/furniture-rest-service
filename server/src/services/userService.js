@@ -1,15 +1,24 @@
+import { generateAuthToken } from "../utils/authUtils.js";
 import User from "../models/User.js";
 
 
 
 export default{
-    register(userData){
+    async register(userData){
 
-        const createdUser = User.create(userData)
+        const createdUser = await User.create(userData);
+        console.log(createdUser);
+        
+
+        const token = generateAuthToken(createdUser);
+        console.log(token);
+        
+
         return {
-            _id:'',
-            email: '',
-            accessToken: ''}
+            _id: createdUser.id,
+            email: createdUser.email,
+            accessToken: token
+        }
     }
 
 }

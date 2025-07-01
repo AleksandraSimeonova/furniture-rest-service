@@ -10,7 +10,12 @@ userController.post('/register', async (req,res)=> {
 
     res.json(result)
       
-})
+});
+
+userController.get('/logout', async (req, res) => {
+
+    res.json({});
+});
 
 
 export default userController

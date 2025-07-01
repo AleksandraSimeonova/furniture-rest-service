@@ -23,6 +23,8 @@ app.use(cors());
 
 app.use(routes);
 
+app.use(auth);
+
 app.get('/data/catalog', (req,res) =>{
     res.json([])
 })

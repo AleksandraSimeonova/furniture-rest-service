@@ -22,10 +22,11 @@ app.use(cors());
 .then(()=> console.log('Successfuly connect to DB'))
 .catch((err)=> console.log('Can not connect to DB: ', err.message))
 
-app.use(routes);
+
 
 app.use(auth);
 
+app.use(routes);
 
 
 app.listen(3030, ()=>{console.log('Server is listening on port http://localhost:3030 ...')})

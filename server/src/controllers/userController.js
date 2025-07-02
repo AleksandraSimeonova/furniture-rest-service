@@ -6,8 +6,6 @@ const userController = Router();
 userController.post('/login', async (req, res) => {
 
     const {email, password} = req.body;
-    console.log(req.body);
-    
 
     const result = await userService.login(email, password);
 

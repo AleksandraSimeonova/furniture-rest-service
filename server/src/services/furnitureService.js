@@ -2,11 +2,14 @@ import Furniture from "../models/Furniture.js"
 
 export default {
 
-    create(furnitureData){
-        
+    create(furnitureData) {
         return Furniture.create(furnitureData)
     },
-     getAll() {
+    getOne(furnitureId) {
+        return Furniture.findById(furnitureId)
+    },
+    getAll() {
         return Furniture.find();
     },
+
 }   
